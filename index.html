@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Missing Vowels</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+      var clues = [
+        'missing vowels round',
+        'another example',
+
+        'santa',
+        'clementines',
+        'elves',
+        'rudolph the red nose reindeer',
+        'advent calendar',
+        'misteltoe',
+        'cranberry sauce',
+        'yule log',
+        'mince pies',
+
+        'a partridge in a pear tree',
+        'wreath',
+        'the queens speech',
+        'noel',
+        'brussel sprouts',
+        'jingle bells',
+        'frankincense',
+        'carols',
+        'pigs in blankets',
+        'ebenezer scrooge',
+        'jesus',
+
+        'the end'
+      ];
+      var clue = true;
+      var index = 0;
+
+      $(document).keypress(function() {
+        var element = $('#clue');
+        var text = clues[index];
+        if(text) {
+          if(clue) {
+            element.removeClass('answer');
+            text = text.replace(/[aeiou ]/g, '');
+            vowels = text.length * 0.2;
+            for(var i = 0; i < text.length * 0.3; i++) {
+              var array = text.split('');
+              array.splice(Math.random() * text.length, 0, ' ');
+              text = array.join('');
+            }
+          } else {
+            element.addClass('answer');
+            index++;
+          }
+          element.text(text);
+          clue = !clue;
+        }
+      });
+    </script>
+    <style>
+      html, body {
+        height: 100%;
+      }
+
+      #container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      #clue {
+        text-transform: uppercase;
+        text-align: center;
+        font-family: Sans-Serif;
+        font-weight: bolder;
+        font-size: 140px;
+      }
+
+      .answer {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="clue"></div>
+    </div>
+  </body>
+</html>
