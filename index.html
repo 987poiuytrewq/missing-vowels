@@ -5,56 +5,81 @@
     <title>Missing Vowels</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
-      var clues = [
-        'missing vowels round',
-        'another example',
-
-        'santa',
-        'clementines',
-        'elves',
-        'rudolph the red nose reindeer',
-        'advent calendar',
-        'misteltoe',
-        'cranberry sauce',
-        'yule log',
-        'mince pies',
-
-        'a partridge in a pear tree',
-        'wreath',
-        'the queens speech',
-        'noel',
-        'brussel sprouts',
-        'jingle bells',
-        'frankincense',
-        'carols',
-        'pigs in blankets',
-        'ebenezer scrooge',
-        'jesus',
-
-        'the end'
-      ];
-      var clue = true;
-      var index = 0;
+      var categories = {
+        "carols": [
+          "away in a manger",
+          "good king wenceslas",
+          "a christmas carol",
+          "oh come all ye faithful",
+          "carol vorderman",
+        ],
+        "christmas presents": [
+          "socks",
+          "john lewis gift card",
+          "the ghost of christmas present",
+          "myrhh",
+          "right now",
+        ],
+        "people born on christmas day": [
+          "annie lennox",
+          "isaac newton",
+          "shane macgowan",
+          "jesus christ of nazareth",
+          "humphrey bogart",
+        ],
+        "christmas songs without the word \"christmas\" in the title": [
+          "last",
+          "rockin' around the tree",
+          "o tree",
+          "baby, it's cold outside",
+          "all i want for is you",
+        ],
+        "christmas films with one word replaced with its opposite": [
+          "good santa",
+          "it's a terrible life",
+          "home together two",
+          "die soft",
+          "the nightmare after christmas",
+        ],
+      };
+      var answer = false;
+      var categoryIndex = 0;
+      var clueIndex = -1;
 
       var next = function() {
-        var element = $('#clue');
-        var text = clues[index];
+        var categoryElement = $('#category');
+        var clueElement = $('#clue');
+        var category = Object.keys(categories)[categoryIndex]
+        var clues = categories[category]
+        var text = clues[clueIndex];
+
         if(text) {
-          if(clue) {
-            element.removeClass('answer');
-            text = text.replace(/[aeiou ]/g, '');
+          if(answer) {
+            clueElement.addClass('answer');
+            clueIndex++;
+          } else {
+            clueElement.removeClass('answer');
+            text = text.replace(/[aeiou ,']/g, '');
             vowels = text.length * 0.2;
             for(var i = 0; i < text.length * 0.3; i++) {
               var array = text.split('');
               array.splice(Math.random() * text.length, 0, ' ');
               text = array.join('');
             }
-          } else {
-            element.addClass('answer');
-            index++;
           }
-          element.text(text);
-          clue = !clue;
+          clueElement.text(text);
+          answer = !answer;
+        } else {
+          if (clueIndex < 0) {
+            clueIndex++;
+          }
+          if (clueIndex >= clues.length) {
+            clueIndex = 0;
+            categoryIndex++;
+            category = Object.keys(categories)[categoryIndex]
+            clueElement.text('');
+          }
+          categoryElement.text(category)
         }
       };
 
@@ -66,13 +91,6 @@
         margin: 0;
         height: 100%;
         font-family: Sans-Serif;
-      }
-
-      #container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
       }
 
       #next {
@@ -95,8 +113,24 @@
         text-decoration: none;
       }
 
+      #container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      #category {
+        margin: 20px 200px;
+        text-transform: uppercase;
+        text-align: center;
+        font-family: Sans-Serif;
+        font-weight: boldest;
+        font-size: 80px;
+      }
+
       #clue {
-        margin: 180px 40px;
+        margin: 160px 40px;
         text-transform: uppercase;
         text-align: center;
         font-family: Sans-Serif;
@@ -112,6 +146,7 @@
   <body>
     <a id="next" href="#">NEXT</a>
     <div id="container">
+      <div id="category"></div>
       <div id="clue"></div>
     </div>
   </body>
