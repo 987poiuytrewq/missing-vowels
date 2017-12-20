@@ -3,7 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>Missing Vowels</title>
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Snowstorm/20131208/snowstorm-min.js"></script>
     <script>
       var categories = {
         "carols": [
@@ -74,12 +77,12 @@
           } else {
             clueElement.removeClass('answer');
             text = text.replace(/[aeiou ,']/g, '');
-            vowels = text.length * 0.2;
             for(var i = 0; i < text.length * 0.3; i++) {
               var array = text.split('');
               array.splice(Math.random() * text.length, 0, ' ');
               text = array.join('');
             }
+            text = text.replace(/ /g, '  ');
           }
           clueElement.text(text);
           answer = !answer;
@@ -104,7 +107,8 @@
       html, body {
         margin: 0;
         height: 100%;
-        font-family: Sans-Serif;
+        font-family: 'Arvo', serif;
+        background-color: #212121;
       }
 
       #next {
@@ -115,8 +119,8 @@
         padding: 40px;
         font-size: 40px;
         text-align: center;
-        color: white;
-        background-color: grey;
+        color: #f5f5f5;
+        background-color: #e53935;
       }
 
       a:link {
@@ -138,22 +142,22 @@
         margin: 20px 200px;
         text-transform: uppercase;
         text-align: center;
-        font-family: Sans-Serif;
         font-weight: boldest;
         font-size: 80px;
+        color: #e53935;
       }
 
       #clue {
-        margin: 160px 40px;
+        margin: 120px 40px;
         text-transform: uppercase;
         text-align: center;
-        font-family: Sans-Serif;
         font-weight: boldest;
         font-size: 160px;
+        color: #f5f5f5;
       }
 
-      .answer {
-        color: green;
+      #clue.answer {
+        color: #66bb6a;
       }
     </style>
   </head>
