@@ -6,61 +6,38 @@
     <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Snowstorm/20131208/snowstorm-min.js"></script>
     <script>
       var categories = {
-        "reindeer": [
-          "dasher",
-          "cupid",
-          "blitzen",
-          "prancer",
-          "comet",
-          "vixen",
-          "rudolf",
-          "dancer",
+        "sayings involving animals": [
+          "a wild goose chase",
+          "bull in a china shop",
+          "don’t count your chickens before they hatch",
+          "kill two birds with one stone",
+          "you can't teach an old dog new tricks",
         ],
-        "christmas decorations": [
-          "fairy lights",
-          "misteltoe",
-          "giant inflatable santa claus",
-          "candy cane",
-          "fake snow",
-          "wreath",
-          "christmas honours list",
-          "poinsettia",
+        "liverpool bands": [
+          "atomic kitten",
+          "echo and the bunnymen",
+          "gerry and the pacemakers",
+          "frankie goes to hollywood",
+          "the coral"
         ],
-        "christmas drinks": [
-          "red wine",
-          "baileys",
-          "eggnog",
-          "mulled cider",
-          "hot buttered rum",
-          "buck's fizz",
-          "a cup of tea",
-          "snowball",
+        "premiership teams and their crests": [
+          "arsenal and a cannon",
+          "crystal palace and crystal palace",
+          "west ham united and two hammers",
+          "liverpool and a liver bird",
+          "brighton and hove albion and a seagull"
         ],
-        "nativity": [
-          "bethlehem",
-          "inn",
-          "balthazar",
-          "king herod the great",
-          "donkey",
-          "archangel gabriel",
-          "manger",
-          "martin freeman",
-        ],
-        "opposite christmas songs": [
-          "next christmas",
-          "all i want for christmas is me",
-          "fairytale of old york",
-          "santa adult",
-          "i'm dreaming of a black christmas",
-          "baby it's hot outside",
-          "i saw daddy kissing santa claus",
-          "frosty the snow woman",
+        "opposite childrens books": [
+          "the dog in the hat",
+          "the tiger who came to breakfast",
+          "winnie the wee",
+          "pippie shortstockings",
+          "where the tame things are",
         ],
         "the end": [
-          ],
+        ],
       };
       var answer = false;
       var categoryIndex = 0;
@@ -111,7 +88,7 @@
         margin: 0;
         height: 100%;
         font-family: 'Arvo', serif;
-        background-color: #212121;
+        background-color: #FFF1D0;
       }
 
       #next {
@@ -122,8 +99,8 @@
         padding: 40px;
         font-size: 40px;
         text-align: center;
-        color: #f5f5f5;
-        background-color: #e53935;
+        color: #FFF1D0;
+        background-color: #F0C808;
       }
 
       a:link {
@@ -147,7 +124,7 @@
         text-align: center;
         font-weight: boldest;
         font-size: 80px;
-        color: #e53935;
+        color: #DD1C1A;
       }
 
       #clue {
@@ -156,11 +133,11 @@
         text-align: center;
         font-weight: boldest;
         font-size: 160px;
-        color: #f5f5f5;
+        color: #086788;
       }
 
       #clue.answer {
-        color: #66bb6a;
+        color: #06AED5;
       }
     </style>
   </head>
