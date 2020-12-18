@@ -17,16 +17,6 @@
           "project management team",
         ],
 
-        "working virtually": [
-          "breakout room",
-          "i'm just going to share my screen",
-          "zoom fatigue",
-          "put your ideas in the chat",
-          "i'll give you the time back",
-          "your internet connection is unstable",
-          "you're on mute!",
-        ],
-
         "PM and whitehat": [
           "progress review",
           "governance",
@@ -35,6 +25,16 @@
           "project management plan",
           "session attendance log",
           "north star metric",
+        ],
+
+        "working virtually": [
+          "breakout room",
+          "i'm just going to share my screen",
+          "zoom fatigue",
+          "put your ideas in the chat",
+          "i'll give you the time back",
+          "your internet connection is unstable",
+          "you're on mute!",
         ],
 
         "merry christmas": [
@@ -58,7 +58,7 @@
             clueIndex++;
           } else {
             clueElement.removeClass('answer');
-            text = text.replace(/[aeiou ,']/g, '');
+            text = text.replace(/[aeiou ,'!]/g, '');
             for(var i = 0; i < text.length * 0.3; i++) {
               var array = text.split('');
               array.splice(Math.random() * text.length, 0, ' ');
@@ -130,7 +130,7 @@
       }
 
       #clue {
-        margin: 80px 40px;
+        margin: 100px 40px 0;
         text-transform: uppercase;
         text-align: center;
         font-weight: boldest;
