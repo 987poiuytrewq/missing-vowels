@@ -2,46 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Missing Vowels</title>
-    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
       var categories = {
-        "parts of a bike": [
-          "handlebars",
-          "pannier bags",
-          "cleats",
-          "bottle cage",
-          "brake cable",
-          "inner tube",
-          "rear derailleur",
+        "examples": [
+          "whitehat",
+          "outstanding alternative to university",
+          "euan blair",
+          "project management team",
         ],
 
-        "types of coffee": [
-          "mocha",
-          "macchiato",
-          "affogato",
-          "cortado",
-          "flat white",
-          "double espresso",
-          "cold brew",
-          "frappucino",
+        "working virtually": [
+          "breakout room",
+          "i'm just going to share my screen",
+          "zoom fatigue",
+          "put your ideas in the chat",
+          "i'll give you the time back",
+          "your internet connection is unstable",
+          "you're on mute!",
         ],
 
-        "famous dans": [
-          "danny dyer",
-          "daniel radcliffe",
-          "dan brown",
-          "desperate dan",
-          "danni minogue",
-          "daniel day lewis",
-          "dani dyer",
-          "danny the champion of the world",
-          "danny ridd",
+        "PM and whitehat": [
+          "progress review",
+          "governance",
+          "off the job",
+          "critical path",
+          "project management plan",
+          "session attendance log",
+          "north star metric",
         ],
 
-        "happy birthday!": [
+        "merry christmas": [
+          "and a happy new year!",
         ],
       };
       var answer = false;
@@ -92,20 +89,20 @@
       html, body {
         margin: 0;
         height: 100%;
-        font-family: 'Poppins', serif;
-        background-color: #F9F9F9;
+        font-family: Roboto,sans-serif;
+        background-color: #192549;
       }
 
       #next {
         position: absolute;
         top: 10px;
         right: 10px;
-        border-radius: 5px;
-        padding: 40px;
-        font-size: 40px;
+        border-radius: 2px;
+        padding: 10px 15px;
+        font-size: 30px;
         text-align: center;
-        color: #99D5C9;
-        background-color: #392B58;
+        color: #FFFFFF;
+        background-color: #1D98FF;
       }
 
       a:link {
@@ -125,11 +122,11 @@
 
       #category {
         margin: 20px 200px;
-        text-transform: uppercase;
+        text-transform: capitalize;
         text-align: center;
         font-weight: boldest;
         font-size: 80px;
-        color: #2D0320;
+        color: #FFFFFF;
       }
 
       #clue {
@@ -137,17 +134,17 @@
         text-transform: uppercase;
         text-align: center;
         font-weight: boldest;
-        font-size: 160px;
-        color: #645E9D;
+        font-size: 100px;
+        color: #1D98FF;
       }
 
       #clue.answer {
-        color: #6C969D;
+        color: #1ADE98;
       }
     </style>
   </head>
   <body>
-    <a id="next" href="#">NEXT</a>
+    <a id="next" href="#">Next</a>
     <div id="container">
       <div id="category"></div>
       <div id="clue"></div>
