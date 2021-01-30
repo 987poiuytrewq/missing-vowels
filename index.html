@@ -10,44 +10,31 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
       var categories = {
-        "good things that happened in 2020": [
-          "holiday at the cottage",
-          "new house",
-          "job promotions",
-          "walks on mum's beach",
-          "boston zooms",
-          "vaccines",
-          "great british bake off",
-          "dumped trump",
-          "george talks",
-        ],
-
-        "what we bought in 2020": [
-          "toilet roll",
-          "hand sanitizer",
-          "face masks",
-          "all the wine",
-          "bloom and wild flowers",
-          "a new sofa",
-          "a new house",
-          "house plants",
-          "lounge wear",
-        ],
-
-        "what we ate in 2020": [
-         "banana bread",
-         "sourdough",
-         "dry as a nuns rice cakes",
-         "mad quiche",
-         "nut roast",
-         "tunnocks tea cakes",
-         "anything in the air fryer",
-        ],
-
-        "merry christmas": [
-          "and a happy new year!",
-        ],
-      };
+              "phrases with double the numbers": [
+                      "a stitch in time saves eighteen",
+                      "kill four birds with two stones",
+                      "back to square two",
+                      "like four peas in a pod",
+                      "giving me the sixth degree",
+                      "quadruple or nothing",
+                    ],
+              "fictional couples": [
+                      "elizabeth bennet and mister darcy",
+                      "rachel green and ross geller",
+                      "marge and homer simpson",
+                      "louis lane and clark kent",
+                      "ron weaseley and hermione granger",
+                      "barbie and ken"
+                    ],
+              "sandwich fillings": [
+                      "prawn cocktail",
+                      "coronation chicken",
+                      "egg and cress",
+                      "bacon lettuce and tomato",
+                      "cheese ploughmans",
+                      "tuna mayonnaise"
+                    ],
+            };
       var answer = false;
       var categoryIndex = 0;
       var clueIndex = -1;
@@ -97,7 +84,7 @@
         margin: 0;
         height: 100%;
         font-family: Roboto,sans-serif;
-        background-color: #192549;
+        background-color: #E0E1DD;
       }
 
       #next {
@@ -108,8 +95,8 @@
         padding: 10px 15px;
         font-size: 30px;
         text-align: center;
-        color: #FFFFFF;
-        background-color: #1D98FF;
+        color: #E0E1DD;
+        background-color: #415A77;
       }
 
       a:link {
@@ -133,20 +120,20 @@
         text-align: center;
         font-weight: boldest;
         font-size: 80px;
-        color: #FFFFFF;
+        color: #415A77;
       }
 
       #clue {
-        margin: 100px 40px 0;
+        margin: 180px 40px 0;
         text-transform: uppercase;
         text-align: center;
         font-weight: boldest;
         font-size: 100px;
-        color: #1D98FF;
+        color: #1B263B;
       }
 
       #clue.answer {
-        color: #1ADE98;
+        color: #415A77;
       }
     </style>
   </head>
