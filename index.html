@@ -8,96 +8,126 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Snowstorm/20131208/snowstorm-min.js"></script>
     <script>
       var categories = {
-              "missing owls": [
-                 "barn owl",
-                 "tawny owl",
-                 "snowy owl",
-                 "short-eared owl",
-                 "little owl",
-                 "screech owl",
-                 "burrowing owl",
+              "sparkly things": [
+                      "diamond ring",
+                      "champagne",
+                      "disco ball",
+                      "christmas decorations",
+                      "strictly come dancing",
+                      "someone's personality",
                     ],
-              "missing vows": [
-                 "vow of silence",
-                 "until death do us part",
-                 "vow of chasttiy",
-                 "in sickness and in health",
-                 "i vow to tell the truth, the whole truth, and nothing but the truth",
+              "where's my nibling?": [
+                      "nursery",
+                      "trouble",
+                      "baby yoga",
+                      "ashton park",
+                      "blue planet aquarium",
+                      "in an elf costume",
+                      "our holiday home",
                     ],
-              "missing wells": [
-                 "wishing well",
-                 "oil well",
-                 "get well soon",
-                 "all well and good",
-                 "george orwell",
-                 "wellington boot",
-                 "all's well that end's well",
+              "80s bands": [
+                      "the human league",
+                      "eurythmics",
+                      "kajagoogoo",
+                      "spandau ballet",
+                      "siouxsie and the banshees",
+                      "echo and the bunnymen",
+                      "squeeze",
+                      "yazoo",
+                      "nwa",
+                      "xtc",
+                      "acdc",
+                      "abba",
+                      "rem",
+                      "a-ha",
+                      "u2",
+                    ],
+              "comedy duos": [
+                      "vic reeves and bob mortimer",
+                      "david mitchell and robert webb",
+                      "barry chuckle and paul chuckle",
+                      "ronnie corbett and ronnie barker",
+                      "stephen fry and hugh laurie",
+                      "noel fielding and julian barret",
+                      "dawn french and jeniifer saunders",
+                    ],
+              "2021 lead actors and TV shows": [
+                      "rose matafeo in starstruck",
+                      "surann jones in vigil",
+                      "olly alexander and it's a sin",
+                      "brian cox in succession",
+                      "brian cox in universe",
+                      "kate winslet in mare of easttown",
+                      "stephen graham in time",
+                      "gillian anderson in sex education",
+                      "grayson perry in grayson perry's art club",
                     ],
             };
-      var answer = false;
-      var categoryIndex = 0;
-      var clueIndex = -1;
+            var answer = false;
+            var categoryIndex = 0;
+            var clueIndex = -1;
 
-      var next = function() {
-        var categoryElement = $('#category');
-        var clueElement = $('#clue');
-        var category = Object.keys(categories)[categoryIndex]
-        var clues = categories[category]
-        var text = clues[clueIndex];
+            var next = function() {
+                    var categoryElement = $('#category');
+                    var clueElement = $('#clue');
+                    var category = Object.keys(categories)[categoryIndex]
+                    var clues = categories[category]
+                    var text = clues[clueIndex];
 
-        if(text) {
-          if(answer) {
-            clueElement.addClass('answer');
-            clueIndex++;
-          } else {
-            clueElement.removeClass('answer');
-            text = text.replace(/[aeiou ,'!-]/g, '');
-            for(var i = 0; i < text.length * 0.3; i++) {
-              var array = text.split('');
-              array.splice(Math.random() * text.length, 0, ' ');
-              text = array.join('');
-            }
-            text = text.replace(/ /g, '  ');
-          }
-          clueElement.text(text);
-          answer = !answer;
-        } else {
-          if (clueIndex < 0) {
-            clueIndex++;
-          }
-          if (clueIndex >= clues.length) {
-            clueIndex = 0;
-            categoryIndex++;
-            category = Object.keys(categories)[categoryIndex]
-            clueElement.text('');
-          }
-          categoryElement.text(category)
-        }
-      };
+                    if(text) {
+                            if(answer) {
+                                    clueElement.addClass('answer');
+                                    clueIndex++;
+                                  } else {
+                                          clueElement.removeClass('answer');
+                                          text = text.replace(/[aeiou ,'!-]/g, '');
+                                          for(var i = 0; i < text.length * 0.3; i++) {
+                                                  var array = text.split('');
+                                                  array.splice(Math.random() * text.length, 0, ' ');
+                                                  text = array.join('');
+                                                }
+                                          text = text.replace(/ /g, '  ');
+                                        }
+                            clueElement.text(text);
+                            answer = !answer;
+                          } else {
+                                  if (clueIndex < 0) {
+                                          clueIndex++;
+                                        }
+                                  if (clueIndex >= clues.length) {
+                                          clueIndex = 0;
+                                          categoryIndex++;
+                                          category = Object.keys(categories)[categoryIndex]
+                                          clueElement.text('');
+                                        }
+                                  categoryElement.text(category)
+                                }
+                  };
 
-      $(document).keypress(next);
-      $(document).click(next);
+            $(document).keypress(next);
+            $(document).click(next);
     </script>
     <style>
-      html, body {
-        margin: 0;
-        height: 100%;
-        font-family: Roboto,sans-serif;
-        background-color: #F9F2C6;
-      }
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: 'Arvo', serif;
+  background-color: #212121;
+}
 
       #next {
         position: absolute;
         top: 10px;
         right: 10px;
-        border-radius: 2px;
-        padding: 10px 15px;
-        font-size: 30px;
+        border-radius: 5px;
+        padding: 40px;
+        font-size: 40px;
         text-align: center;
-        color: #F9F2C6;
-        background-color: #26805D;
+        color: #f5f5f5;
+        background-color: #e53935;
       }
 
       a:link {
@@ -117,24 +147,24 @@
 
       #category {
         margin: 20px 200px;
-        text-transform: capitalize;
-        text-align: center;
-        font-weight: boldest;
-        font-size: 80px;
-        color: #0F3940;
-      }
-
-      #clue {
-        margin: 180px 40px 0;
         text-transform: uppercase;
         text-align: center;
         font-weight: boldest;
-        font-size: 100px;
-        color: #D62E24;
+        font-size: 80px;
+        color: #e53935;
+      }
+
+      #clue {
+        margin: 120px 40px;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: boldest;
+        font-size: 160px;
+        color: #f5f5f5;
       }
 
       #clue.answer {
-        color: #26805D;
+        color: #66bb6a;
       }
     </style>
   </head>
